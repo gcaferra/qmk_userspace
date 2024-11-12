@@ -20,7 +20,9 @@ enum custom_keycodes {
 #define CTL_F CTL_T(KC_F)
 #define SFT_D SFT_T(KC_D)
 #define ALT_S ALT_T(KC_S)
+#define CMD_G LCMD_T(KC_G)
 
+#define CMD_H RCMD_T(KC_H)
 #define CTL_J CTL_T(KC_J)
 #define SFT_K SFT_T(KC_K)
 #define ALT_L ALT_T(KC_L)
