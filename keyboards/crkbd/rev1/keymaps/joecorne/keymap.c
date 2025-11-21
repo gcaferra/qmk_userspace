@@ -33,6 +33,8 @@ enum custom_keycodes {
 #define ALT_INS RALT(KC_INS)
 #define KC_AMP LSFT(KC_7)
 
+#define KC_UNDE LSFT(KC_MINS)
+
 
 
 #if defined(RGBLIGHT_ENABLE) || defined(RGB_MATRIX_ENABLE)
@@ -49,7 +51,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
        KC_ESC,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                         KC_Y,    KC_U,    KC_I,    KC_O,   KC_P,  KC_BSPC,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-       KC_TAB,    KC_A,   ALT_S,   SFT_D,   CTL_F,  CMD_G,                        CMD_H,   CTL_J,   SFT_K,   ALT_L, KC_SCLN, KC_QUOT,\
+       KC_TAB,    KC_A,   ALT_S,   SFT_D,   CTL_F,  CMD_G ,                        CMD_H,   CTL_J,   SFT_K,   ALT_L, KC_SCLN, KC_QUOT,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       ALT_INS,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                         KC_N,    KC_M,KC_COMMA,  KC_DOT, KC_SLSH, KC_BSLS,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
@@ -71,25 +73,25 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_RAISE] = LAYOUT_split_3x6_3( \
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      KC_GRV, KC_PLUS, KC_MINS,   KC_DLR, KC_LBRC, KC_RBRC,                      _______, _______, _______, _______, _______, _______,\
+      KC_GRV, KC_PLUS, KC_MINS ,  KC_EQL, KC_LBRC, KC_RBRC,                      KC_HASH, KC_BSLS,KC_COMMA, KC_DOT, _______, _______,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_ASTR, KC_HASH, KC_EXLM,  KC_EQL, KC_LPRN, KC_RPRN,                      _______, _______, _______, _______, _______, _______,\
+      KC_BSLS, KC_SLSH, KC_EXLM, KC_PIPE, KC_LPRN, KC_RPRN,                      KC_ASTR, KC_CIRC, KC_PERC, KC_TILD, _______, _______,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_TILD, KC_PERC,  KC_AMP,   KC_AT, KC_LABK, KC_RABK,                      _______, _______, _______, _______, _______, _______,\
+      KC_UNDE,  KC_AT ,  KC_AMP,  KC_DLR, KC_LABK, KC_RABK,                      _______, _______, _______, _______, _______, _______,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_PIPE, KC_CIRC, _______,    _______, _______, _______ \
+                                          _______  , _______, _______,    _______, _______, _______ \
                                       //`--------------------------'  `--------------------------'
   ),
 
  [_FUNC] = LAYOUT_split_3x6_3( \
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-       KC_F11,   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                      _______, _______, _______, _______, _______, _______,\
+       KC_F1 , KC_F2  , KC_F3  , KC_F4  , KC_F5  ,  KC_F6 ,                      _______, _______, _______, _______, _______, _______,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-       KC_F12,   KC_F6,   KC_F7,   KC_F8,   KC_F9,  KC_F10,                      _______, _______, _______, _______, _______, _______,\
+       KC_F7 , KC_F8  , KC_F9  , KC_F10 , KC_F11 , KC_F12 ,                      _______, _______, _______, _______, _______, _______,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_CAPS, CG_TOGG, KC_PSCR, _______, _______, _______,                      _______, _______, _______, _______, _______, _______,\
+      KC_CAPS, CG_TOGG, KC_PSCR, _______, KC_INS , KC_MENU,                      _______, _______, _______, _______, _______, _______,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_MENU,  KC_INS, _______,    _______, _______, _______ \
+                                          _______, _______, _______,    _______, _______, _______ \
                                       //`--------------------------'  `--------------------------'
     ),
 
@@ -108,11 +110,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_ADJUST] = LAYOUT_split_3x6_3( \
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-       BL_OFF,  RGBRST, XXXXXXX, XXXXXXX, XXXXXXX, BL_BRTG,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,\
+      UG_PREV, UG_NEXT, XXXXXXX, XXXXXXX, XXXXXXX, _______,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      RGB_TOG, RGB_HUI, RGB_SAI, RGB_VAI, RGB_M_R, RGB_M_K,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,\
+      UG_TOGG, UG_HUEU, UG_SATU, UG_VALU, UG_SPDU, _______,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      RGB_MOD, RGB_HUD, RGB_SAD, RGB_VAD, RGB_M_X, RGB_M_G,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,\
+      _______, UG_HUED, UG_SATD, UG_VALD, UG_SPDD, _______,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           _______, _______, _______,    _______, _______, _______ \
                                       //`--------------------------'  `--------------------------'
@@ -140,20 +142,27 @@ if (record->event.pressed) {
     case LOWER:
       if (record->event.pressed) {
         layer_on(_LOWER);
-        update_tri_layer_RGB(_LOWER, _RAISE, _ADJUST);
+        #ifdef RGBLIGHT_ENABLE
+          update_tri_layer_RGB(_LOWER, _RAISE, _ADJUST);
+        #endif
       } else {
         layer_off(_LOWER);
-        update_tri_layer_RGB(_LOWER, _RAISE, _ADJUST);
+        #ifdef RGBLIGHT_ENABLE
+          update_tri_layer_RGB(_LOWER, _RAISE, _ADJUST);
+        #endif
       }
       return false;
     case RAISE:
       if (record->event.pressed) {
         layer_on(_RAISE);
-        update_tri_layer_RGB(_LOWER, _RAISE, _ADJUST);
+        #ifdef RGBLIGHT_ENABLE
+          update_tri_layer_RGB(_LOWER, _RAISE, _ADJUST);
+        #endif
       } else {
-
         layer_off(_RAISE);
-        update_tri_layer_RGB(_LOWER, _RAISE, _ADJUST);
+        #ifdef RGBLIGHT_ENABLE
+          update_tri_layer_RGB(_LOWER, _RAISE, _ADJUST);
+        #endif
       }
       return false;
     case ADJUST:
