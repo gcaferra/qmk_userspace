@@ -73,9 +73,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_RAISE] = LAYOUT_split_3x6_3( \
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-      KC_GRV, KC_PLUS, KC_MINS ,  KC_EQL, KC_LBRC, KC_RBRC,                      KC_HASH, KC_BSLS,KC_COMMA, KC_DOT, KC_ASTR , KC_CIRC,\
+      KC_GRV, KC_PLUS, KC_MINS ,  KC_EQL, KC_LBRC, KC_RBRC,                      KC_HASH, KC_ASTR, KC_CIRC, _______, _______, _______,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_BSLS, KC_SLSH, KC_EXLM, KC_PIPE, KC_LPRN, KC_RPRN,                      _______, _______, _______, _______, KC_PERC, KC_TILD,\
+      KC_PERC, KC_TILD, KC_EXLM, KC_PIPE, KC_LPRN, KC_RPRN,                        CMD_H,   CTL_J,   SFT_K,   ALT_L, _______, _______,\
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_UNDE,  KC_AT ,  KC_AMP,  KC_DLR, KC_LABK, KC_RABK,                      _______, _______, _______, _______, _______, _______,\
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
